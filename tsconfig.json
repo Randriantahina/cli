@@ -1,22 +1,23 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
     "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "target": "ES2022", // recommandé avec NodeNext
+    "moduleResolution": "NodeNext",
     "outDir": "dist",
-    "rootDir": ".", // racine du projet
-    "baseUrl": ".", // racine du projet
+    "rootDir": "src",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["*"] // @/module → racine/module
+      "@/*": ["*"]
     },
-    "sourceMap": true,
-    "noImplicitAny": true,
     "esModuleInterop": true,
+    "moduleDetection": "force",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
     "strict": true,
     "skipLibCheck": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "sourceMap": true
   },
-  "include": ["**/*"]
+  "include": ["src/**/*"]
 }
