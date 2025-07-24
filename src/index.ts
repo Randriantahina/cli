@@ -1,19 +1,15 @@
-#!/usr/bin/env node
-import { Command } from 'commander';
-import { suggestCommitMessage } from './commands/suggest.js';
+import { suggestCommitMessage } from './commands/suggest';
 
-const program = new Command();
+async function main() {
+  const arg = process.argv[2];
 
-program
-  .name('gitbuddy')
-  .description('Assistant Git basé sur IA')
-  .version('1.0.0');
+  switch (arg) {
+    case 'suggest':
+      await suggestCommitMessage();
+      break;
+    default:
+      console.log('Usage : gitbuddy [suggest]');
+  }
+}
 
-program
-  .command('suggest')
-  .description('Suggère un message de commit basé sur les fichiers staged')
-  .action(async () => {
-    await suggestCommitMessage();
-  });
-
-program.parse(process.argv);
+main();
