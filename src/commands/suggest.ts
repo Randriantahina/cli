@@ -32,7 +32,7 @@ export async function suggestCommitMessage() {
 
   const result = await model.generateContent([
     {
-      text: `Tu es un assistant Git. Analyse le diff suivant et propose un message de commit clair, concis et conventionnel :\n\n${diff}`,
+      text: `You are a Git assistant. Analyze the following git diff and suggest a clear, concise, conventional commit message in English:\n\n${diff}`,
     },
   ]);
 
@@ -41,6 +41,6 @@ export async function suggestCommitMessage() {
 
   spinner.stop();
 
-  console.log(chalk.greenBright('\n💬 Suggestion de commit :'));
+  console.log(chalk.greenBright('\n Suggestion de commit :'));
   console.log(chalk.white(msg.trim()));
 }
